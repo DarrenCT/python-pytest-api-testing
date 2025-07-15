@@ -1,9 +1,9 @@
 name: API Continous Testing 
 
 on:
-  # push:
-  # branches:
-  #    - main
+  push:
+  branches:
+     - main
   # pull_request:
   # schedule:
   #  - cron: '0 0 * * *' # Run daily at midnight UTC
@@ -39,7 +39,7 @@ jobs:
       working-directory: ${{ github.workspace }}
 
     - name: Save test report as artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: test-report
         path: report.html
